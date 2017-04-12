@@ -10,6 +10,27 @@
 ### Security
 
 
+## [0.4.0]
+### Added
+- --limit option to sync
+
+### Fixed
+- use calendar.timegm instead of time.mktime so there isn't timezone skew
+
+
+## [0.3.1]
+### Fixed
+- fix sync via call_command
+
+
+## [0.3.0]
+### Added
+- Route Server network type
+- Maintenance contact type
+- standalone URLField
+- better testing options
+
+
 ## [0.2.2]
 ### Added
 - CHANGELOG!

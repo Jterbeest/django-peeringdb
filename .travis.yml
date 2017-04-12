@@ -5,7 +5,18 @@ branches:
   except:
     - gh-pages
 env:
-  - TOX_ENV=py27
+  - TOX_ENV=py27-django18-prod
+  - TOX_ENV=py27-django19-prod
+
+  - TOX_ENV=py27-django18-beta
+  - TOX_ENV=py27-django19-beta
+
+matrix:
+  fast_finish: true
+  allow_failures:
+    - env: TOX_ENV=py27-django18-beta
+    - env: TOX_ENV=py27-django19-beta
+
 before_install:
   - pip install codecov
 install:
@@ -14,4 +25,3 @@ script:
   - tox -e $TOX_ENV
 after_success:
   - codecov
-
